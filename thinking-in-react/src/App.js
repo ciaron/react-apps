@@ -1,40 +1,52 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class SearchBar extends Component {
   render() {
-
+    return "a"
   }
 }
 class ProductTable extends Component {
   render() {
+    return (
 
+      <table>
+        {this.props.products}
+      </table>
+    )
   }
 }
 class ProductCategoryRow extends Component {
   render() {
-
+    return "c"
   }
 }
 class ProductRow extends Component {
   render() {
-
-  }  
+    return "d"
+  }
 }
 
 
 class FilterableProductTable extends Component {
   render() {
-    return <table>test</table>
-  }
+    return (
+
+    <div>
+      <SearchBar />
+      <ProductTable
+        products = {this.props.products}
+      />
+    </div>
+
+  )}
 }
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-          <FilterableProductTable />
+          <FilterableProductTable products={"testproducts"} />
       </div>
     );
   }
