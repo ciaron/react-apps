@@ -10,9 +10,11 @@ class ProductTable extends Component {
 
   render() {
     let rows = [];
-    rows.push(<ProductRow name={this.props.products[0].name} price="33" />);
-    rows.push(<ProductRow name={this.props.products[1].name} price="44" />);
-    rows.push("test2");
+
+    this.props.products.forEach((product) => {
+      rows.push(<ProductRow product={product} />);
+
+    });
 
     return (
       <table>
@@ -45,10 +47,12 @@ class ProductCategoryRow extends Component {
 }
 class ProductRow extends Component {
   render() {
+    const product = this.props.product;
     return (
+
       <tr>
-        <td>{this.props.name}</td>
-        <td>{this.props.price}</td>
+        <td>{product.name}</td>
+        <td>{product.price}</td>
       </tr>
         )
   }
